@@ -6,8 +6,8 @@ Follow these steps to set up and run the project:
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repository-url>
-cd <your-project-folder>
+git clone <https://github.com/Chiranth-Janardhan-moger/I-School>
+cd <I-School>
 ```
 
 ### 2. Install Dependencies
