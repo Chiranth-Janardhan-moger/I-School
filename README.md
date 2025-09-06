@@ -29,7 +29,7 @@ npm run dev
 
 ```
 src/
-├── components/NavBar
+├── components/
 │   └── Nav.js          # Main navigation component
 ├── assets/
 │   └── logo.png        # Your logo file
