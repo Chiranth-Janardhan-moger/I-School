@@ -10,30 +10,26 @@ function About() {
     teachers: 0,
     success: 0
   });
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   const schoolImages = [
     {
-      src: "/api/placeholder/600/300",
+      src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0RKmY2s0EfAoUBOpSXH7bhqLACwCXP4F9rw&s",
       alt: "Modern classroom with students",
       title: "Interactive Learning Environment"
     },
     {
-      src: "/api/placeholder/600/300", 
+      src: "https://news.utexas.edu/wp-content/uploads/2023/02/Happy-Teacher-600x400-c-default.jpg", 
       alt: "Students in large lecture hall",
       title: "Spacious Academic Halls"
     },
     {
-      src: "/api/placeholder/600/300",
+      src: "https://www.my-avanti.com/wp-content/uploads/2023/12/student-working-on-math-1.jpg",
       alt: "Students during examination",
       title: "Excellence in Academics"
     },
      {
-      src: "/api/placeholder/600/300",
-      alt: "Students during examination",
-      title: "Excellence in Academics"
-    },
-     {
-      src: "/api/placeholder/600/300",
+      src: "https://www.helperbird.com/assets/images/blog/7-steps-to-create-personalised-learning-plans-for-students/7-steps-to-create-personalised-learning-plans-for-students.jpeg",
       alt: "Students during examination",
       title: "Excellence in Academics"
     }
@@ -41,36 +37,63 @@ function About() {
 
   // Counter animation
   useEffect(() => {
-    setIsVisible(true);
-    
-    const animateCounters = () => {
-      const targets = { students: 1710, awards: 35, teachers: 50, success: 95 };
-      const duration = 2000;
-      const steps = 60;
-      const increment = duration / steps;
-      
-      let currentStep = 0;
-      const timer = setInterval(() => {
-        currentStep++;
-        const progress = currentStep / steps;
-        
-        setCounters({
-          students: Math.floor(targets.students * progress),
-          awards: Math.floor(targets.awards * progress),
-          teachers: Math.floor(targets.teachers * progress),
-          success: Math.floor(targets.success * progress)
-        });
-        
-        if (currentStep >= steps) {
-          setCounters(targets);
-          clearInterval(timer);
-        }
-      }, increment);
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setIsVisible(true);
+            setHasAnimated(true);
+            
+            const animateCounters = () => {
+              const targets = { students: 1710, awards: 35, teachers: 50, success: 95 };
+              const duration = 2000;
+              const startTime = Date.now();
+              
+              const animate = () => {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function for smooth animation (ease-out)
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                
+                setCounters({
+                  students: Math.floor(targets.students * easeOut),
+                  awards: Math.floor(targets.awards * easeOut),
+                  teachers: Math.floor(targets.teachers * easeOut),
+                  success: Math.floor(targets.success * easeOut)
+                });
+                
+                if (progress < 1) {
+                  requestAnimationFrame(animate);
+                } else {
+                  setCounters(targets);
+                }
+              };
+              
+              setTimeout(() => requestAnimationFrame(animate), 300);
+            };
 
-    const timeout = setTimeout(animateCounters, 500);
-    return () => clearTimeout(timeout);
-  }, []);
+            animateCounters();
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the component is visible
+        rootMargin: '-50px 0px' // Start animation a bit before the element is fully in view
+      }
+    );
+
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      observer.observe(aboutSection);
+    }
+
+    return () => {
+      if (aboutSection) {
+        observer.unobserve(aboutSection);
+      }
+    };
+  }, [hasAnimated]);
 
   // Auto-rotate images
   useEffect(() => {
@@ -78,17 +101,17 @@ function About() {
       setCurrentImageIndex((prev) => (prev + 1) % schoolImages.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  },[schoolImages.length]);
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden">
+    <div id="about" className="min-h-screen bg-white overflow-hidden select-none">
       <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2">
         
         {/* Left Side - Student Image with Stats */}
         <div className={`relative flex items-center justify-center p-4 sm:p-6 lg:p-8 transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
           <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-none">
             {/* Main Student Image */}
-            <div className="relative z-10 w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[700px] mx-auto">
+            <div className="relative z-10 w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[500px] mx-auto">
               <img 
                 src={girl}
                 alt="Happy student with books" 
@@ -136,7 +159,7 @@ function About() {
 
               {/* Image Carousel */}
               <div className="relative flex-1">
-                <div className="h-48 sm:h-64 md:h-80 lg:h-[400px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+                <div className="h-68 w-fit lg:h-[350px] rounded-3xl overflow-hidden shadow-2xl">
                   {schoolImages.map((image, index) => (
                     <div
                       key={index}
@@ -151,7 +174,7 @@ function About() {
                         alt={image.alt}
                         className="w-full h-full object-cover rounded-2xl sm:rounded-3xl"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-blue-100 to-transparent rounded-2xl sm:rounded-3xl drop-shadow-2xl"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-100/40 to-transparent rounded-2xl sm:rounded-3xl drop-shadow-2xl"></div>
                       <div className="absolute bottom-3 sm:bottom-4 lg:bottom-6 left-3 sm:left-4 lg:left-6">
                         <h3 className="text-white text-sm sm:text-lg lg:text-xl font-bold drop-shadow-lg">
                           {image.title}
