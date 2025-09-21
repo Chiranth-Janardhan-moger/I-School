@@ -1,44 +1,91 @@
-
 import Nav from './components/Nav';
 import Home from './components/Home'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Announcement from './components/AnnouncementBar';
 import AnnouncementBanner from './components/AnnouncementBanner';
-
+import About from './components/About';
 
 function App() {
   return (
-      <Router>
+    <Router>
       <div className="App">
         {/* Announcement Banner (Modal) - Shows on page load */}
         <AnnouncementBanner />
         
         <Routes>
-      
-          
-          {/* All other routes with main layout */}
-          <Route path="/*" element={
+          {/* Home page with scrollable sections */}
+          <Route path="/" element={
             <>
-              {/* Navbar */}
+              {/* Navbar - Fixed at top */}
               <Nav />
               
-              {/* Announcement Bar - Below navbar, above main content */}
+              {/* Announcement Bar - Below navbar */}
               <Announcement />
               
-              {/* Main content routes */}
-              <Routes>
-                {/* Home page with HeroPage component */}
-                <Route path="/" element={<Home />} />
+              {/* Scrollable Content */}
+              <div className="scroll-container">
+                {/* Home Section - First screen */}
+                <section id="home" className="min-h-screen">
+                  <Home />
+                </section>
                 
-                {/* Other pages */}
-                <Route path="/courses" element={<div>Courses Page</div>} />
-                <Route path="/admissions" element={<div>Admissions Page</div>} />
-                <Route path="/workshops" element={<div>Workshops Page</div>} />
+                {/* About Section - Second screen (appears when scrolling down) */}
+                <section id="about" className="min-h-screen">
+                  <About />
+                </section>
                 
-                {/* Add more routes as needed */}
-                <Route path="/about" element={<div>About Page</div>} />
-                <Route path="/contact" element={<div>Contact Page</div>} />
-              </Routes>
+                {/* You can add more sections here */}
+                {/* 
+                <section id="courses" className="min-h-screen">
+                  <div>Courses Content</div>
+                </section>
+                
+                <section id="admissions" className="min-h-screen">
+                  <div>Admissions Content</div>
+                </section>
+                */}
+              </div>
+            </>
+          } />
+          
+          {/* Separate routes for individual pages (if needed) */}
+          <Route path="/about" element={
+            <>
+              <Nav />
+              <Announcement />
+              <About />
+            </>
+          } />
+          
+          <Route path="/courses" element={
+            <>
+              <Nav />
+              <Announcement />
+              <div>Courses Page</div>
+            </>
+          } />
+          
+          <Route path="/admissions" element={
+            <>
+              <Nav />
+              <Announcement />
+              <div>Admissions Page</div>
+            </>
+          } />
+          
+          <Route path="/workshops" element={
+            <>
+              <Nav />
+              <Announcement />
+              <div>Workshops Page</div>
+            </>
+          } />
+          
+          <Route path="/contact" element={
+            <>
+              <Nav />
+              <Announcement />
+              <div>Contact Page</div>
             </>
           } />
         </Routes>
@@ -47,4 +94,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

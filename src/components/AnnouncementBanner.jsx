@@ -5,7 +5,7 @@ const AnnouncementBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
   
  
-  const bannerEnabled = true;
+  const bannerEnabled = false;
   
   // Banner configuration
   const bannerData = {
