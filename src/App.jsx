@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Announcement from './components/AnnouncementBar';
 import AnnouncementBanner from './components/AnnouncementBanner';
 import About from './components/About';
+import Academics from './components/Academics';
 
 function App() {
   return (
@@ -34,7 +35,9 @@ function App() {
                   <About />
                 </section>
                 
-                {/* You can add more sections here */}
+                <section id="academics" className="min-h-screen">
+                  <Academics />
+                </section>
                 {/* 
                 <section id="courses" className="min-h-screen">
                   <div>Courses Content</div>
