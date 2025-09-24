@@ -5,7 +5,7 @@ const AnnouncementBar = () => {
   const [isVisible, setIsVisible] = useState(true);
   
   // Control visibility - set to false to hide the announcement bar
-  const visible = true;
+  const visible = false;
   
   const announcements = [
     { id: 1, text: "🎉 Special Discount: 50% OFF on all courses!", link: "/courses" },
