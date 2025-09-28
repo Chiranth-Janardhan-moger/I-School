@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import img1 from '../assets/1child.png'
 import img2 from '../assets/3child.png'
 import img3 from '../assets/2child.png'
+import namelogo from '../assets/name_logo.png'
 
 
 const handleNavigation = (id) => {
@@ -21,9 +22,10 @@ const HeroPage = () => {
 
   const heroPages = [
     {
-      category: "Learning Summit:",
-      title: "Unleashing Creative brilliance",
-      descrption: "we provide the real education (sample text )",
+      category: "The I-school",
+      descrption: `Where Education Meets Excellence-At i-School,
+      We Nurture Young Minds to Explore, Learn, and Create. Here,
+      Learning is Fun, and Creativity Knows No Bounds.`,
     }
   ];
 
@@ -50,23 +52,20 @@ const HeroPage = () => {
             isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
           }`}>
             {/* Decorative star - repositioned */}
-            <div className="absolute -top-6 -right-6 text-yellow-400 text-4xl lg:text-5xl transform rotate-12 animate-spin-slow hover:scale-110 transition-transform cursor-pointer">
+            <div className="absolute -top-6 -right-6 text-yellow-400 text-4xl xl:right-66 xl:top-10 lg:text-5xl transform rotate-12 animate-spin-slow hover:scale-110 transition-transform cursor-pointer">
               ⭐
             </div>
 
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-5xl xl:text-6xl sm:text-5xl font-bold leading-tight">
-                <span className="text-gray-800 animate-fade-in-up">{heroPages[0].category}</span>
+                <span className="text-blue-400 animate-fade-in-up text-2xl">WELCOME TO</span>
                 <br />
-                <span className="text-gray-800 animate-fade-in-up animation-delay-200">Unleashing</span>
-                <br />
-                <span className="text-yellow-400 font-black animate-fade-in-up animation-delay-400 hover:text-yellow-500 transition-colors cursor-default">Creative</span>
-                <br />
-                <span className="text-yellow-400 font-black animate-fade-in-up animation-delay-600 hover:text-yellow-500 transition-colors cursor-default">brilliance</span>
+                <span className="text-gray-800 animate-fade-in-up animation-delay-200"><img src={namelogo} alt="" width={400} /></span>
+            
               </h1>
               
               <div className="flex items-center space-x-2 text-base lg:text-lg animate-fade-in-up animation-delay-800">
-                <span className="font-bold text-gray-800">{heroPages[0].descrption}</span>
+                <span className="font-bold text-gray-600" style={{ whiteSpace: 'pre-line' }}>{heroPages[0].descrption}</span>
               </div>
           
 
@@ -90,13 +89,6 @@ const HeroPage = () => {
                 
     
               </div>
-            </div>
-
-            {/* Decorative dots */}
-            <div className="flex justify-center mt-4 space-x-2 animate-fade-in-up animation-delay-1200">
-              <span className="text-2xl font-bold text-gray-800 animate-bounce animation-delay-0">:</span>
-              <span className="text-2xl font-bold text-gray-800 animate-bounce animation-delay-200">:</span>
-              <span className="text-2xl font-bold text-gray-800 animate-bounce animation-delay-400">:</span>
             </div>
           </div>
 
@@ -132,10 +124,6 @@ const HeroPage = () => {
               </div>
             </div>
 
-            {/* Top left decorative star */}
-            <div className="absolute top-4 right-29  xl:left-60 text-yellow-400 text-3xl lg:text-4xl transform -rotate-12 animate-pulse hover:scale-110 transition-transform cursor-pointer">
-              ⭐
-            </div>
 
             {/* Top right image - repositioned for proper visibility */}
             <div className="absolute -top-42 xl:left-98 xl:-top-44 lg:left-64 lg:-top-64 right-26 sm:top-2 sm:right-28 z-10 hidden sm:block animate-fade-in-scale animation-delay-800">
@@ -183,9 +171,7 @@ const HeroPage = () => {
             </div>
             
             {/* Bottom right star */}
-            <div className="absolute bottom-4 right-4 text-yellow-400 text-3xl transform rotate-45 animate-pulse hover:scale-110 transition-transform cursor-pointer">
-              ⭐
-            </div>
+         
           </div>
         </div>
       </div>
