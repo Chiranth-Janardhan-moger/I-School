@@ -91,14 +91,7 @@ const photos = [
             <X className="w-6 h-6" />
           </button>
 
-          {/* Alternative close button for mobile */}
-          <button
-            onClick={() => setSelectedImage(null)}
-            className="fixed top-2 right-2 sm:hidden bg-red-500 hover:bg-red-600 text-white rounded-full p-2 shadow-xl border-2 border-white backdrop-blur-sm transition-all duration-200 hover:scale-110 z-[70]"
-            aria-label="Close image modal"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          
 
           <div
             className="relative w-full max-w-6xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col"

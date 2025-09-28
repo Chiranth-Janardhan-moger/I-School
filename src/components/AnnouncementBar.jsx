@@ -8,8 +8,11 @@ const AnnouncementBar = () => {
   const visible = true;
   
   const announcements = [
-    { id: 1, text: "🎉 Special Discount: 50% OFF on all courses!", link: "#academics" },
-    { id: 2, text: "📚 New Admission Open - Apply Now!", link: "#contact" }
+    { id: 1, text: "🎉 New Admission Open - Apply Now!", link: "#academics" },
+      { id: 1, text: "                     ", link: "#academics" },
+        { id: 1, text: "🎉 New Admission Open - Apply Now!", link: "#academics" },
+            { id: 1, text: "                     ", link: "#academics" },
+    { id: 2, text: "🎉 New Admission Open - Apply Now!", link: "#contact" }
   ];
 
   const handleClose = () => setIsVisible(false);

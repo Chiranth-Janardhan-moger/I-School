@@ -18,7 +18,7 @@ const Footer = () => {
           <h3 className="text-xl font-bold mb-4">Contact Us</h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
-              <MapPin className="w-8 h-8" />  Site No.8, 12th Cross Road, Maruthi Layout
+              <MapPin className="w-6 h-6" />  Site No.8, 12th Cross Road, Maruthi Layout
                     Dasarahalli, Bengaluru 560024
             </li>
             <li className="flex items-center gap-2">
