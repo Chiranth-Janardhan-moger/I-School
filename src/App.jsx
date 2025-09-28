@@ -5,6 +5,9 @@ import Announcement from './components/AnnouncementBar';
 import AnnouncementBanner from './components/AnnouncementBanner';
 import About from './components/About';
 import Academics from './components/Academics';
+import Gallery from './components/Gallery';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -38,59 +41,22 @@ function App() {
                 <section id="academics" className="min-h-screen">
                   <Academics />
                 </section>
-                {/* 
-                <section id="courses" className="min-h-screen">
-                  <div>Courses Content</div>
+                
+                <section id="gallery" className="min-h-screen">
+                    <Gallery />
+                  </section>
+                
+                <section id="contact" className="min-h-screen">
+                  <Contact />
+                </section>
+                  <section className="min-h-1/2">
+                  <Footer />
                 </section>
                 
-                <section id="admissions" className="min-h-screen">
-                  <div>Admissions Content</div>
-                </section>
-                */}
               </div>
             </>
           } />
           
-          {/* Separate routes for individual pages (if needed) */}
-          <Route path="/about" element={
-            <>
-              <Nav />
-              <Announcement />
-              <About />
-            </>
-          } />
-          
-          <Route path="/courses" element={
-            <>
-              <Nav />
-              <Announcement />
-              <div>Courses Page</div>
-            </>
-          } />
-          
-          <Route path="/admissions" element={
-            <>
-              <Nav />
-              <Announcement />
-              <div>Admissions Page</div>
-            </>
-          } />
-          
-          <Route path="/workshops" element={
-            <>
-              <Nav />
-              <Announcement />
-              <div>Workshops Page</div>
-            </>
-          } />
-          
-          <Route path="/contact" element={
-            <>
-              <Nav />
-              <Announcement />
-              <div>Contact Page</div>
-            </>
-          } />
         </Routes>
       </div>
     </Router>

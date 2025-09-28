@@ -61,7 +61,6 @@ const Nav = () => {
     { icon: Home, label: 'Home', path: '#home' },
     { icon: BookOpen, label: 'About', path: '#about' },
     { icon: FolderOpen, label: 'Academics', path: '#academics' },
-    { icon: MessageSquare, label: 'Announcements', path: '#announcements' },
     { icon: Users, label: 'Gallery', path: '#gallery' }
   ]
 
@@ -114,7 +113,7 @@ const Nav = () => {
               <div className='hidden lg:flex items-center space-x-3'>
                 <button 
                   className='cursor-pointer px-4 py-2 bg-blue-400 hover:bg-blue-500 text-base text-white rounded-full font-bold shadow-xl hover:shadow-xl transition-all transform hover:scale-102 '
-                  onClick={() => handleNavigation('/contact')}
+                  onClick={() => handleNavigation('#contact')}
                 >
                   Contact Us
                 </button>
@@ -154,9 +153,17 @@ const Nav = () => {
                 </div>
 
                 {/* Mobile Contact Us button */}
-                <div className='space-y-2'>
-                  
+               {/* Mobile Contact Us button */}
+           <div className='space-y-2'>
+                  <button 
+                    className='w-full px-6 py-3 mb-2 bg-blue-400 text-white rounded-full font-bold hover:bg-blue-500 transition-all transform  flex items-center justify-center space-x-2'
+                    onClick={() => handleNavigation('#contact')}
+                  >
+                    
+                    <span>Contact Us</span>
+                  </button>
                 </div>
+
               </div>
             )}
             

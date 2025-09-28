@@ -1,7 +1,16 @@
+
 import React, { useState, useEffect } from 'react';
 import img1 from '../assets/1child.png'
 import img2 from '../assets/3child.png'
 import img3 from '../assets/2child.png'
+
+
+const handleNavigation = (id) => {
+  const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+};
 
 const HeroPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -46,7 +55,7 @@ const HeroPage = () => {
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl sm:text-5xl font-bold leading-tight">
                 <span className="text-gray-800 animate-fade-in-up">{heroPages[0].category}</span>
                 <br />
                 <span className="text-gray-800 animate-fade-in-up animation-delay-200">Unleashing</span>
@@ -59,13 +68,27 @@ const HeroPage = () => {
               <div className="flex items-center space-x-2 text-base lg:text-lg animate-fade-in-up animation-delay-800">
                 <span className="font-bold text-gray-800">{heroPages[0].descrption}</span>
               </div>
-              
+          
+
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4 animate-fade-in-up animation-delay-1000">
-                <button className="  bg-blue-400 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform active:scale-95 group">
-                  <span className="group-hover:animate-pulse">Contact Us</span>
-                </button>
+              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-2 animate-fade-in-up animation-delay-1000">
+               <button 
+               onClick={() => handleNavigation('#contact')}
+               className="
+                bg-blue-400 hover:bg-blue-500 text-white
+                px-5 py-3 text-sm sm:px-6 sm:py-3 sm:text-base
+                rounded-full font-semibold
+                transition-all duration-300
+                shadow-lg hover:shadow-xl
+                hover:scale-105 transform active:scale-95 group
+                w-auto        /* 👈 ensures it doesn't stretch full width */
+                self-start   /* 👈 centers it inside flex-col */
+              ">
+                <span className="group-hover:animate-pulse">Contact Us</span>
+              </button>
+
                 
+    
               </div>
             </div>
 
@@ -81,55 +104,67 @@ const HeroPage = () => {
           <div className={`relative h-80 lg:h-96 xl:h-[500px] transform transition-all duration-1000 ${
             isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
           }`}>
-            {/* Main central image - properly sized and28 positioned */}
-            <div className="absolute top-1/2 left-52 transform -translate-x-1/2 -translate-y-1/2 z-20 animate-fade-in-scale animation-delay-600">
-              <div className="w-48 h-72 lg:w-56 lg:h-88 xl:w-58 xl:h-88 bg-yellow-400 rounded-full flex items-center justify-center overflow-hidden relative hover:bg-yellow-500 transition-colors duration-300 hover:scale-105 transform group cursor-pointer shadow-xl hover:shadow-2xl border-4 border-black">
+            {/* Main central image - properly sized and positioned */}
+           <div
+            className="
+              absolute
+              top-1/2 left-44 
+              transform -translate-x-1/2 -translate-y-1/2 
+              sm:-top-58 sm:right-4 sm:-translate-y-1/2 sm:translate-x-0 sm:left-auto
+              lg:top-1/2 lg:left-1 lg:-translate-y-1/2 lg:translate-x-0   /* Side position for lg */
+              xl:-top-14 xl:left-44 xl:-translate-x-1/2 xl:translate-y-0   /* Top position for xl */
+              z-20 animate-fade-in-scale animation-delay-600
+            "
+          >
+              <div className="w-48 h-72 sm:w-50  sm:h-80 lg:w-[300px] lg:h-[440px] xl:w-[400px] xl:h-[600px] bg-yellow-400 rounded-full flex items-center justify-center overflow-hidden relative hover:bg-yellow-400 transition-colors duration-300 hover:scale-105 transform group cursor-pointer shadow-xl hover:shadow-2xl border-4 border-yellow-400">
                 <img
                   src={img1}
                   alt="Happy student"
-                  className="w-48 h-72 lg:w-72 lg:h-86 xl:w-72 xl:h-86 object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
+                  decoding="async"
+                  loading="lazy"
+                  className="w-48 h-72 sm:w-50 sm:h-80 lg:w-[300px] lg:h-[440px] xl:w-[400px] xl:h-[600px] object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               {/* "let's" text - repositioned */}
-              <div className="absolute -top-8 -right-12 lg:-right-16 text-blue-500 text-2xl lg:text-3xl font-handwriting transform rotate-12 animate-wiggle hover:text-blue-600 transition-colors cursor-pointer">
+              <div className="absolute -top-8 -right-12 sm:-top-6 sm:-right-8 lg:-right-16 text-blue-500 text-2xl sm:text-xl lg:text-3xl xl:text-4xl xl:right-12 font-handwriting transform rotate-12 animate-wiggle hover:text-blue-600 transition-colors cursor-pointer">
                 let's
               </div>
             </div>
 
             {/* Top left decorative star */}
-            <div className="absolute top-4 left-4 text-yellow-400 text-3xl lg:text-4xl transform -rotate-12 animate-pulse hover:scale-110 transition-transform cursor-pointer">
+            <div className="absolute top-4 right-29  xl:left-60 text-yellow-400 text-3xl lg:text-4xl transform -rotate-12 animate-pulse hover:scale-110 transition-transform cursor-pointer">
               ⭐
             </div>
 
             {/* Top right image - repositioned for proper visibility */}
-            <div className="absolute -top-42 right-26 z-10 hidden lg:block animate-fade-in-scale animation-delay-800">
-              <div className="w-32 h-32 xl:w-48 xl:h-72 bg-purple-400 rounded-full overflow-hidden shadow-xl flex items-center justify-center hover:bg-purple-500 transition-colors duration-300 hover:scale-105 transform group cursor-pointer hover:shadow-2xl border-3 border-black">
+            <div className="absolute -top-42 xl:left-98 xl:-top-44 lg:left-64 lg:-top-64 right-26 sm:top-2 sm:right-28 z-10 hidden sm:block animate-fade-in-scale animation-delay-800">
+              <div className="w-32 h-32 sm:w-60 sm:h-80  xl:w-48 xl:h-72 lg:h-72 lg:w-48 bg-purple-400 rounded-full overflow-hidden shadow-xl flex items-center justify-center hover:bg-purple-400 transition-colors duration-300 hover:scale-105 transform group cursor-pointer hover:shadow-2xl border-3 border-purple-400">
                 <img
                   src={img2}
                   alt="Student"
-                  className="w-28 h-38 xl:w-42 xl:h-72 object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
+                  className="w-28 h-38 sm:w-60 sm:h-80   xl:w-42 xl:h-72 lg:h-72 lg:w-48 object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               {/* "learn" text */}
-              <div className="absolute -bottom-6 -left-8 text-green-500 text-xl xl:text-2xl font-handwriting transform rotate-12 animate-wiggle animation-delay-400 hover:text-green-600 transition-colors cursor-pointer">
+              <div className="absolute -bottom-6 -left-8 sm:-bottom-4 sm:-left-6 text-green-500 text-xl sm:text-lg xl:text-4xl xl:-left-140 font-handwriting transform rotate-12 animate-wiggle animation-delay-400 hover:text-green-600 transition-colors cursor-pointer">
                 learn
               </div>
             </div>
 
             {/* Bottom right image - repositioned */}
-            <div className="absolute bottom-0 right-12 hidden lg:block animate-fade-in-scale animation-delay-1000">
-              <div className="w-36 h-36 xl:w-58 xl:h-72 bg-blue-400 rounded-full overflow-hidden shadow-xl flex items-center justify-center hover:bg-blue-500 transition-colors duration-300 hover:scale-105 transform group cursor-pointer hover:shadow-2xl border-3 border-black">
+            <div className="absolute bottom-0 right-12 xl:right-9 lg:-right-6 lg:-bottom-22 sm:bottom-16 sm:right-130 hidden sm:block animate-fade-in-scale animation-delay-1000">
+              <div className="w-36 h-36 sm:w-50 sm:h-60 xl:w-60 xl:h-72 lg:h-66 lg:w-44 bg-blue-400 rounded-full overflow-hidden shadow-xl flex items-center justify-center hover:bg-blue-400 transition-colors duration-300 hover:scale-105 transform group cursor-pointer hover:shadow-2xl border-3 border-blue-400"> 
                 <img
                   src={img3}
                   alt="Student"
-                  className="w-32 h-40 xl:w-56 xl:h-72 object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
+                  className="w-32 h-40 sm:w-50 sm:h-60  xl:w-60 xl:h-72 lg:h-66 lg:w-44 object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               {/* "Fun" text */}
-              <div className="absolute -top-6 -left-8 text-fuchsia-500 text-xl xl:text-2xl font-handwriting transform rotate-12 animate-wiggle animation-delay-400 hover:text-purple-600 transition-colors cursor-pointer">
+              <div className="absolute -top-6 -left-8 sm:-top-4 sm:-left-6 text-fuchsia-500 text-xl sm:text-lg xl:text-4xl font-handwriting transform rotate-12 animate-wiggle animation-delay-400 hover:text-purple-600 transition-colors cursor-pointer">
                 Fun
               </div>
             </div>
