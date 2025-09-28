@@ -23,9 +23,9 @@ const HeroPage = () => {
   const heroPages = [
     {
       category: "The I-school",
-      descrption: `Where Education Meets Excellence-At i-School,
-      We Nurture Young Minds to Explore, Learn, and Create. Here,
-      Learning is Fun, and Creativity Knows No Bounds.`,
+      descrption: `Where Education Meets Excellence,
+      We Nurture Young Minds to Explore, Learn, and Create.
+      Here,Learning is Fun, and Creativity Knows No Bounds.`,
     }
   ];
 
@@ -170,7 +170,7 @@ const HeroPage = () => {
               </svg>
             </div>
             
-            {/* Bottom right star */}
+
          
           </div>
         </div>

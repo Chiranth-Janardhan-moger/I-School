@@ -5,11 +5,11 @@ const AnnouncementBar = () => {
   const [isVisible, setIsVisible] = useState(true);
   
   // Control visibility - set to false to hide the announcement bar
-  const visible = false;
+  const visible = true;
   
   const announcements = [
-    { id: 1, text: "🎉 Special Discount: 50% OFF on all courses!", link: "/courses" },
-    { id: 2, text: "📚 New Admission Open - Apply Now!", link: "/admissions" }
+    { id: 1, text: "🎉 Special Discount: 50% OFF on all courses!", link: "#academics" },
+    { id: 2, text: "📚 New Admission Open - Apply Now!", link: "#contact" }
   ];
 
   const handleClose = () => setIsVisible(false);
@@ -23,7 +23,7 @@ const AnnouncementBar = () => {
   if (!visible || !isVisible) return null;
 
   return (
-   <div className='bg-gradient-to-r from-blue-100 via-purple-100 to-purple-100 select-none' >
+   <div className='bg-gradient-to-r from-blue-100 via-purple-100 to-purple-100 select-none mt-4' >
     <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-2 px-4 rounded-4xl  relative overflow-hidden">
       <div className="flex items-center justify-between">
         <div className="flex-1 overflow-hidden">

@@ -59,7 +59,7 @@ const Nav = () => {
 
   const menuItems = [
     { icon: Home, label: 'Home', path: '#home' },
-    { icon: BookOpen, label: 'About', path: '#about' },
+    { icon: BookOpen, label: 'About Us', path: '#about' },
     { icon: FolderOpen, label: 'Academics', path: '#academics' },
     { icon: Users, label: 'Gallery', path: '#gallery' }
   ]

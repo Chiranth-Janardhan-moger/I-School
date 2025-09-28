@@ -109,6 +109,9 @@ function About() {
       id="about"
       className="relative min-h-screen overflow-hidden select-none bg-gradient-radial from-purple-100 via-white-100 to-pink-100"
     >
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-700 mb-4 sm:mb-6 pt-8 z-10 relative ">
+        About Us
+      </h2>
       {/* Background SVG shapes - Hidden on mobile, visible on larger screens */}
       <svg className="hidden sm:block absolute top-0 -left-20 w-60 h-60 lg:w-80 lg:h-80 opacity-40 sm:opacity-50 lg:opacity-60 z-0" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="100" cy="100" r="100" fill="url(#grad1)" />
@@ -145,10 +148,10 @@ function About() {
       <div className="hidden sm:block absolute top-1/2 left-1/4 w-4 h-4 lg:w-6 lg:h-6 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full opacity-60 z-0 animate-pulse"></div>
       <div className="hidden sm:block absolute top-1/6 right-1/3 w-3 h-3 lg:w-4 lg:h-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-70 z-0 animate-pulse" style={{animationDelay: '1s'}}></div>
       <div className="hidden sm:block absolute bottom-1/3 left-1/6 w-3 h-3 lg:w-5 lg:h-5 bg-gradient-to-r from-green-400 to-blue-500 rounded-full opacity-50 z-0 animate-pulse" style={{animationDelay: '2s'}}></div>
-
+ 
       <div className="min-h-screen p-4 sm:p-6 lg:p-8 xl:p-12">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 relative z-5">
-          
+     
           {/* Left Side - Main Image Section */}
           <div className={`lg:col-span-3 relative flex items-center justify-center transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
@@ -157,6 +160,7 @@ function About() {
               <div className="relative z-20 w-full mx-auto rounded-2xl sm:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-500">
                 <img 
                   src={img8}
+                  draggable={false}
                   alt="Happy student with books" 
                   className="w-full h-auto rounded-2xl sm:rounded-3xl"
                 />

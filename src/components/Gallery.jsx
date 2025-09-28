@@ -61,6 +61,7 @@ const photos = [
                 <img
                   src={photo.url}
                   alt={photo.title}
+                  draggable={false}
                   className="w-full object-cover rounded-t-xl sm:rounded-t-xl lg:rounded-t-2xl
                     h-48 sm:h-40 md:h-44 lg:h-48 xl:h-56"
                 />

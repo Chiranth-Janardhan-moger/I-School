@@ -5,7 +5,7 @@ const AnnouncementBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
   
  
-  const bannerEnabled = false;
+  const bannerEnabled = true;
   
   // Banner configuration
   const bannerData = {
@@ -13,7 +13,7 @@ const AnnouncementBanner = () => {
     subtitle: "Special Admission Discount",
     description: "Get 50% OFF on all courses! Hurry up, offer valid till this month end.",
     buttonText: "Claim Now",
-    buttonLink: "/courses",
+    buttonLink: "#contact",
     type: "discount",
     backgroundColor: "from-purple-600 to-pink-600"
   };
@@ -66,7 +66,7 @@ const AnnouncementBanner = () => {
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 select-none">
-      <div className="relative max-w-md w-full">
+      <div className="relative max-w-md w-full pt-3.5">
         {/* Close button */}
         <button
           onClick={handleClose}

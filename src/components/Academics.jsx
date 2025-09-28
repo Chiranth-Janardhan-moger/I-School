@@ -73,7 +73,7 @@ const Academic = () => {
     if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => observer.disconnect();
-  }, [classes]);
+  }, []);
 
   const toggleDetails = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -110,6 +110,7 @@ const Academic = () => {
               <img
                 src={cls.image}
                 alt={cls.name}
+                draggable={false}
                 className="w-full h-48 object-cover rounded-t-2xl"
               />
               <div className="p-5 text-center">

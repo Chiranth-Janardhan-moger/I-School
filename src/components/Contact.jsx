@@ -102,7 +102,7 @@ const ContactForm = () => {
           <p className="text-sm sm:text-base font-semibold text-blue-600 tracking-wide uppercase mb-2">
             I-School
           </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4">
             CONTACT US
           </h1>
         </div>
@@ -133,7 +133,7 @@ const ContactForm = () => {
                     Email
                   </h3>
                   <p className="text-gray-600 text-base sm:text-lg">
-                    contact@yourschool.edu
+                    eeipl793@theischool.com
                   </p>
                 </div>
               </div>
