@@ -108,13 +108,13 @@ const HeroPage = () => {
               z-20 animate-fade-in-scale animation-delay-600
             "
           >
-              <div className="w-48 h-72 sm:w-50  sm:h-80 lg:w-[300px] lg:h-[440px] xl:w-[400px] xl:h-[600px] bg-yellow-400 rounded-full flex items-center justify-center overflow-hidden relative hover:bg-yellow-400 transition-colors duration-300 hover:scale-105 transform group cursor-pointer shadow-xl hover:shadow-2xl border-4 border-yellow-400">
+              <div className="w-62 h-86 sm:w-50  sm:h-80 lg:w-[300px] lg:h-[440px] xl:w-[400px] xl:h-[600px] bg-yellow-400 rounded-full flex items-center justify-center overflow-hidden relative hover:bg-yellow-400 transition-colors duration-300 hover:scale-105 transform group cursor-pointer shadow-xl hover:shadow-2xl border-4 border-yellow-400">
                 <img
                   src={img1}
                   alt="Happy student"
                   decoding="async"
                   loading="lazy"
-                  className="w-48 h-72 sm:w-50 sm:h-80 lg:w-[300px] lg:h-[440px] xl:w-[400px] xl:h-[600px] object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
+                  className="w-62 h-86  sm:w-50 sm:h-80 lg:w-[300px] lg:h-[440px] xl:w-[400px] xl:h-[600px] object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
