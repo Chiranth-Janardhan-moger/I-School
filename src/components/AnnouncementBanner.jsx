@@ -52,7 +52,7 @@ const FestivalWishesBanner = () => {
     const checkBannerVisibility = () => {
       const lastShown = localStorage.getItem('festivalBannerLastShown');
       const now = Date.now();
-      const oneDay = 24 * 60 * 60 * 1000; // Show once per day
+      const oneDay = 5* 60 * 1000;
  
       if (!lastShown || (now - parseInt(lastShown)) > oneDay) {
         setTimeout(() => {
@@ -173,5 +173,6 @@ const FestivalWishesBanner = () => {
     </div>
   );
 };
+
 
 export default FestivalWishesBanner;
