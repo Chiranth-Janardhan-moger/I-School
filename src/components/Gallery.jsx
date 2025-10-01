@@ -36,7 +36,7 @@ const photos = [
   };
 
   return (
-    <div className="select-none  relative min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-100 p-3 sm:p-6 lg:p-8 xl:p-12 flex flex-col items-center overflow-x-hidden overflow-y-auto">
+    <div className="select-none relative min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-100 p-3 sm:p-6 lg:p-8 xl:p-12 flex flex-col items-center overflow-x-hidden overflow-y-auto">
       {/* Header */}
       <h2 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-6 sm:mb-8 lg:mb-10 xl:mb-16 text-gray-800">Gallery</h2>
 
@@ -50,10 +50,10 @@ const photos = [
               <div
                 key={index}
                 onClick={() => setSelectedImage(photo)}
-                className="relative cursor-pointer bg-white rounded-xl sm:rounded-xl lg:rounded-2xl shadow-xl hover:shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:z-50 mx-auto w-full"
+                className="relative cursor-pointer bg-white rounded-xl sm:rounded-xl lg:rounded-2xl shadow-xl hover:shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:z-10 mx-auto w-full"
                 style={{
                   transform: `rotate(${rotate}deg)`,
-                  marginBottom: `${Math.abs(verticalOffset) * 0.2}px`, // Further reduced for mobile
+                  marginBottom: `${Math.abs(verticalOffset) * 0.2}px`,
                   boxShadow: "0 15px 35px rgba(0,0,0,0.15)",
                 }}
                 title={`${photo.emoji} ${photo.title}`}
@@ -79,13 +79,13 @@ const photos = [
       {/* Fullscreen Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 sm:p-6 lg:p-8"
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999] p-4 sm:p-6 lg:p-8"
           onClick={() => setSelectedImage(null)}
         >
           {/* Close Button - Always visible and positioned outside content area */}
           <button
             onClick={() => setSelectedImage(null)}
-            className="fixed top-4 right-4 bg-white/95 hover:bg-white text-gray-800 rounded-full p-3 shadow-xl border-2 border-gray-200 backdrop-blur-sm transition-all duration-200 hover:scale-110 z-[70]"
+            className="fixed top-4 right-4 bg-white/95 hover:bg-white text-gray-800 rounded-full p-3 shadow-xl border-2 border-gray-200 backdrop-blur-sm transition-all duration-200 hover:scale-110 z-[10000]"
             aria-label="Close image modal"
           >
             <X className="w-6 h-6" />

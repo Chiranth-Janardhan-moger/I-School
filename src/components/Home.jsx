@@ -60,7 +60,7 @@ const HeroPage = () => {
               <h1 className="text-4xl lg:text-5xl xl:text-6xl sm:text-5xl font-bold leading-tight">
                 <span className="text-blue-400 animate-fade-in-up text-2xl">WELCOME TO</span>
                 <br />
-                <span className="text-gray-800 animate-fade-in-up animation-delay-200"><img src={namelogo} alt="" width={400} /></span>
+                <span className="text-gray-800 animate-fade-in-up animation-delay-200"><img src={namelogo} draggable={false} alt="I-School" width={400} /></span>
             
               </h1>
               
@@ -114,6 +114,7 @@ const HeroPage = () => {
                   alt="Happy student"
                   decoding="async"
                   loading="lazy"
+                  draggable={false}
                   className="w-62 h-86  sm:w-50 sm:h-80 lg:w-[300px] lg:h-[440px] xl:w-[400px] xl:h-[600px] object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
