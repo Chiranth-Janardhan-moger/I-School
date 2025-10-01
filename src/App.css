@@ -1,52 +1,271 @@
-/* Smooth scrolling for the entire page */
+/* ===================================
+   ULTRA SMOOTH SCROLLING CONFIGURATION
+   =================================== */
+
+/* Enable smooth scrolling with momentum on iOS/Safari */
 html {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
+  overflow-x: hidden;
 }
 
-/* Optional: Custom scrollbar styling */
+body {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  /* Hardware acceleration for smoother scrolling */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* Optimize all scrollable elements for performance */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  /* Enable GPU acceleration for transforms */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: auto;
+}
+
+/* Custom scrollbar with smooth gradient */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #f1f1f1 0%, #e8e8e8 100%);
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 4px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Optional: Fade in animation for sections as they come into view */
-.scroll-container section {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
 }
 
-/* Optional: Snap scrolling (each section takes full screen) */
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #667eea #f1f1f1;
+}
+
+/* ===================================
+   BUTTERY SMOOTH SCROLL CONTAINER
+   =================================== */
+
 .scroll-container {
-  scroll-snap-type: y mandatory;
+  /* Smooth scroll snap with proximity for better mobile feel */
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 80px;
+  
+  /* Enable hardware acceleration */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: scroll-position;
+  
+  /* Momentum scrolling for iOS */
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  /* Smooth transitions */
+  transition: scroll 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Individual sections with smooth snap */
 .scroll-container section {
   scroll-snap-align: start;
+  scroll-snap-stop: normal; /* Allow smooth continuous scrolling */
+  
+  /* Ultra smooth fade-in with cubic-bezier easing */
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition: 
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Enable hardware acceleration */
+  -webkit-transform: translate3d(0, 0, 0);
+  will-change: opacity, transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-/* Make sure nav stays on top */
+/* ===================================
+   MOBILE-OPTIMIZED TOUCH SCROLLING
+   =================================== */
+
+/* Optimize touch interactions for mobile */
+@media (hover: none) and (pointer: coarse) {
+  /* Mobile/Touch devices */
+  html {
+    /* Use native smooth scrolling on mobile for best performance */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    /* Reduce motion for better mobile performance */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .scroll-container {
+    /* More lenient snap on mobile for fluid scrolling */
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 70px;
+    
+    /* Better touch response */
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .scroll-container section {
+    /* Faster transitions on mobile for snappier feel */
+    transition: 
+      opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+/* ===================================
+   NAVIGATION LAYER OPTIMIZATION
+   =================================== */
+
 nav {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  
+  /* Smooth nav appearance/disappearance */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Enable GPU acceleration */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-/* Adjust content to account for fixed nav */
-.scroll-container {
-  padding-top: 80px; /* Adjust based on your nav height */
+/* ===================================
+   PERFORMANCE OPTIMIZATIONS
+   =================================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize images for smooth scrolling */
+img, video {
+  /* Prevent layout shifts */
+  max-width: 100%;
+  height: auto;
+  
+  /* Enable GPU acceleration */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* ===================================
+   ADVANCED EASING CURVES
+   =================================== */
+
+/* Ultra smooth easing for all interactive elements */
+a, button, input, textarea, select {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth hover effects */
+a:hover, button:hover {
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ===================================
+   OPTIONAL: PARALLAX OPTIMIZATION
+   =================================== */
+
+/* If you have parallax elements, optimize them */
+.parallax-element {
+  will-change: transform;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* ===================================
+   EXPERIMENTAL: SCROLL-DRIVEN ANIMATIONS
+   =================================== */
+
+/* Modern browsers support for ultra-smooth scroll animations */
+@supports (animation-timeline: scroll()) {
+  .scroll-animate {
+    animation: fadeInUp linear;
+    animation-timeline: scroll();
+    animation-range: entry 0% cover 30%;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px) translateZ(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) translateZ(0);
+    }
+  }
+}
+
+/* ===================================
+   60FPS SCROLL OPTIMIZATION
+   =================================== */
+
+/* Force GPU rendering for smooth 60fps scrolling */
+.scroll-container,
+.scroll-container section,
+nav {
+  contain: layout style paint;
+  content-visibility: auto;
+}
+
+/* Optimize rendering for smooth scrolling */
+@media screen and (min-width: 768px) {
+  .scroll-container section {
+    /* Smoother on desktop */
+    transition: 
+      opacity 1s cubic-bezier(0.33, 1, 0.68, 1),
+      transform 1s cubic-bezier(0.33, 1, 0.68, 1);
+  }
 }

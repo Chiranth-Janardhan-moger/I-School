@@ -9,10 +9,10 @@ const AnnouncementBar = () => {
   
   const announcements = [
     { id: 1, text: "🎉 New Admission Open - Apply Now!", link: "#academics" },
-      { id: 1, text: "                     ", link: "#academics" },
-        { id: 1, text: "🎉 New Admission Open - Apply Now!", link: "#academics" },
-            { id: 1, text: "                     ", link: "#academics" },
-    { id: 2, text: "🎉 New Admission Open - Apply Now!", link: "#contact" }
+      { id: 2, text: "                     ", link: "#academics" },
+        { id: 3, text: "🎉 New Admission Open - Apply Now!", link: "#academics" },
+            { id: 4, text: "                     ", link: "#academics" },
+    { id: 5, text: "🎉 New Admission Open - Apply Now!", link: "#contact" }
   ];
 
   const handleClose = () => setIsVisible(false);
