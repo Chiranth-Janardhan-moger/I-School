@@ -2,8 +2,8 @@
 
 A modern, responsive website for i-School - An Intelligent School by Edumeta, built with React and Tailwind CSS.
 
-![i-School Banner](![poster1](https://github.com/user-attachments/assets/dd8f22d4-ce33-4c9a-98d7-8d8493c9bd23)
-)
+
+![i-School Banner](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
@@ -116,3 +116,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <br>
   <sub>An Intelligent School by Edumeta</sub>
 </div>
+
+
+
+
+
+
