@@ -1,12 +1,118 @@
-# React + Vite
+# 🎓 i-School Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive website for i-School - An Intelligent School by Edumeta, built with React and Tailwind CSS.
 
-Currently, two official plugins are available:
+![i-School Banner](![poster1](https://github.com/user-attachments/assets/dd8f22d4-ce33-4c9a-98d7-8d8493c9bd23)
+)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 About
 
-## Expanding the ESLint configuration
+i-School is a comprehensive school website designed to showcase the institution's activities, academics, and vibrant community. The website features a modern UI with smooth animations, interactive galleries, and a responsive design that works seamlessly across all devices.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: React
+- **Styling**: Tailwind CSS 
+- **Icons**: Lucide React
+- **Build Tool**: Vite
+
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Chiranth-Janardhan-moger/I-School.git
+   cd I-School
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   # or
+   yarn build
+   ```
+
+## 📁 Project Structure
+
+```
+ischool-website/
+│
+├── public/
+│   └── favicon.ico
+│
+├── src/
+│   ├── assets/
+│   │   ├── logo.png         # School logos and Images
+│   │
+│   ├── components/
+│   │   ├── Nav.jsx          # Navigation bar
+│   │   ├── Gallery.jsx      # Photo gallery
+│   │   ├── AnouncementBanner.jsx  #  banner
+│   │   └── ...
+│   │
+│   ├── App.jsx              # Main app component
+│   ├── main.jsx             # Entry point
+│   └── index.css            # Global styles
+│
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+```
+
+## 🔮 Future Enhancements
+
+- [ ] Add admin dashboard for content management
+- [ ] Add more interactive animations
+- [ ] Create student/teacher portal sections
+- [ ] Implement dark mode toggle
+- [ ] Add multilingual support
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+**i-School**
+- Website: [https://ischool.example.com](https://ischool.example.com)
+- Email: info@ischool.com
+- Location: Bengaluru, Karnataka, India
+
+---
+
+<div align="center">
+  Made with ❤️ for i-School
+  <br>
+  <sub>An Intelligent School by Edumeta</sub>
+</div>
