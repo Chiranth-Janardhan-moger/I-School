@@ -105,8 +105,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **i-School**
-- Website: [https://ischool.example.com](https://ischool.example.com)
-- Email: info@ischool.com
+- Website: [https://ischool.com](https://i-school-6a9j.vercel.app/)
+- Email: eeipl793@ischool.com
 - Location: Bengaluru, Karnataka, India
 
 ---
