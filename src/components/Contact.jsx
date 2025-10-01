@@ -6,6 +6,7 @@ import {
   Send,
   CheckCircle,
   AlertCircle,
+  Import,
 } from "lucide-react";
 
 const ContactForm = () => {
@@ -20,7 +21,7 @@ const ContactForm = () => {
   const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
 
 
-  const WEB3FORMS_ACCESS_KEY = "1d012e01-21b9-4e37-807e-a2ab89700026";
+  const WEB3FORMS_ACCESS_KEY = "eab9731f-2206-4d64-958e-baac5343526f";
 
   const handleChange = (e) => {
     setFormData({
