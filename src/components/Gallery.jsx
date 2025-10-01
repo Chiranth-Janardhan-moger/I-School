@@ -109,6 +109,7 @@ const photos = [
               <img
                 src={selectedImage.url}
                 alt={selectedImage.title}
+                draggable={false}
                 className="max-w-full max-h-full object-contain"
                 style={{ 
                   maxHeight: 'calc(90vh - 120px)', // Account for info bar and padding
