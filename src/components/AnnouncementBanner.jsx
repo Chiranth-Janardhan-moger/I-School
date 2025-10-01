@@ -8,11 +8,11 @@ const Banner = () => {
   const [selectedPoster, setSelectedPoster] = useState(null);
   
   const bannerEnabled = true;
-  const posters = React.useMemo(() => [
+  const posters = [
     poster1,
     poster2
-  ], []);
-  
+  ];
+
   useEffect(() => {
     if (!bannerEnabled) return;
 
@@ -33,7 +33,7 @@ const Banner = () => {
     };
 
     checkBannerVisibility();
-  }, [bannerEnabled,posters]);
+  });
 
   const handleClose = () => {
     setIsVisible(false);

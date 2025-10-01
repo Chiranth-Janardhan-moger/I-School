@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import img4 from "../assets/4.jpg";
+import img11 from "../assets/11.jpg";
+import img16 from "../assets/16.jpg";
 import img12 from "../assets/12.jpg";
 import img34 from "../assets/34.jpg";
 import img32 from "../assets/32.jpg";
@@ -7,6 +10,7 @@ import img29 from "../assets/29.jpg";
 import img27 from "../assets/27.jpg";
 import img37 from "../assets/37.jpg";
 import img36 from "../assets/36.jpg";
+
 
 import { X } from "lucide-react";
 
@@ -22,6 +26,9 @@ const photos = [
   { url: img27, title: "Art & Crafts", emoji: "🎨" },
   { url: img37, title: "Raksha bandhan", emoji: "🎉" },
   { url: img36, title: "Independence Day", emoji: "🇮🇳" },
+  { url: img4, title: "Learning strokes", emoji: "🎨" },
+  { url: img16, title: "Meditation classes", emoji: "🧘" },
+  { url: img11, title: "Morning assembly", emoji: "☀️" },
 ];
 
   const generateStyles = (index) => {

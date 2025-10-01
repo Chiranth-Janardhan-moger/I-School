@@ -12,7 +12,7 @@ const Academic = () => {
   const classes = [
     {
       name: "Playgroup",
-      image: img15,
+      image: img19,
       desc: "Fun-based learning for toddlers to explore and socialize.",
       details: {
         age: "1-2 years",
@@ -22,7 +22,7 @@ const Academic = () => {
     },
     {
       name: "Nursery",
-      image: img17,
+      image: img15,
       desc: "Strong foundations in language, numbers, and creativity.",
       details: {
         age: "3-4 years",
@@ -32,7 +32,7 @@ const Academic = () => {
     },
     {
       name: "LKG",
-      image: img19,
+      image: img18,
       desc: "Structured learning with fun activities.",
       details: {
         age: "4-5 years",
@@ -42,7 +42,7 @@ const Academic = () => {
     },
     {
       name: "UKG",
-      image: img18,
+      image: img17,
       desc: "Preparing children for primary school with growth focus.",
       details: {
         age: "5-6 years",
@@ -73,7 +73,7 @@ const Academic = () => {
     if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => observer.disconnect();
-  }, []);
+  });
 
   const toggleDetails = (index) => {
     setOpenIndex(openIndex === index ? null : index);
