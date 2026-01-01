@@ -4,17 +4,24 @@
 🎓 i-School
 </h1>
 
-<p style="font-size: 1.2rem; margin-top: -10px;">
-  <strong>First Client Project</strong>
+<p align="center" style="margin-top: -6px;">
+  <mark style="
+    background: #fde047;
+    padding: 4px 8px;
+    border-radius: 2px;
+    font-weight: 700;
+    color: #1f2937;
+  ">
+    First Client Project
+  </mark>
+  &nbsp;•&nbsp;
   <a href="https://i-school-6a9j.vercel.app/"
      target="_blank"
-     title="Open Live Website"
-     style="text-decoration: none;">
-    <span style="text-decoration: none; color: inherit;">
-      • Production-Ready Website
-    </span>
+     style="text-decoration: none; color: inherit;">
+    Production-Ready Website
   </a>
 </p>
+
 </div>
 i-School is a comprehensive school website designed to showcase the institution's activities, academics, and vibrant community. The website features a modern UI with smooth animations, interactive galleries, and a responsive design that works seamlessly across all devices.
 
