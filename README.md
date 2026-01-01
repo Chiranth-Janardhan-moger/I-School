@@ -1,27 +1,42 @@
-# 🎓 i-School Website
+<div align="center">
 
-A modern, responsive website for i-School - An Intelligent School by Edumeta, built with React and Tailwind CSS.
+<h1 style="font-size: 3rem; background: linear-gradient(90deg, #3b82f6, #22c55e); -webkit-background-clip: text; color: transparent;">
+🎓 i-School
+</h1>
 
-
-![i-School Banner](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
-## 🎯 About
-
+<p style="font-size: 1.2rem; margin-top: -10px;">
+  <strong>First Client Project</strong>
+  <a href="https://i-school-6a9j.vercel.app/"
+     target="_blank"
+     title="Open Live Website"
+     style="text-decoration: none;">
+    <span style="text-decoration: none; color: inherit;">
+      • Production-Ready Website
+    </span>
+  </a>
+</p>
+</div>
 i-School is a comprehensive school website designed to showcase the institution's activities, academics, and vibrant community. The website features a modern UI with smooth animations, interactive galleries, and a responsive design that works seamlessly across all devices.
 
-## 🛠️ Tech Stack
+<div align="center">
+
+<img src="./assets/ischool-demo.gif" width="85%" />
+
+<sub>Homepage → Gallery → Announcements → Contact</sub>
+
+</div>
+
+
+## Tech Stack
+
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=react,tailwind,vite,js,html,css" />
+</p>
 
 - **Frontend Framework**: React
 - **Styling**: Tailwind CSS 
 - **Icons**: Lucide React
 - **Build Tool**: Vite
-
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
 
 ### Steps
 
@@ -34,25 +49,14 @@ i-School is a comprehensive school website designed to showcase the institution'
 2. **Install dependencies**
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
 3. **Start development server**
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
-4. **Build for production**
-   ```bash
-   npm run build
-   # or
-   yarn build
-   ```
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 ischool-website/
@@ -61,9 +65,8 @@ ischool-website/
 │   └── favicon.ico
 │
 ├── src/
-│   ├── assets/
-│   │   ├── logo.png         # School logos and Images
-│   │
+│   ├── assets/  # School logos and Images
+│   │     
 │   ├── components/
 │   │   ├── Nav.jsx          # Navigation bar
 │   │   ├── Gallery.jsx      # Photo gallery
@@ -80,15 +83,7 @@ ischool-website/
 └── README.md
 ```
 
-## 🔮 Future Enhancements
-
-- [ ] Add admin dashboard for content management
-- [ ] Add more interactive animations
-- [ ] Create student/teacher portal sections
-- [ ] Implement dark mode toggle
-- [ ] Add multilingual support
-
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -98,17 +93,16 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Contact
+## Contact
 
 **i-School**
 - Website: [https://ischool.com](https://i-school-6a9j.vercel.app/)
 - Email: eeipl793@ischool.com
 - Location: Bengaluru, Karnataka, India
-
 ---
 
 <div align="center">
@@ -116,9 +110,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <br>
   <sub>An Intelligent School by Edumeta</sub>
 </div>
-
-
-
-
-
-
