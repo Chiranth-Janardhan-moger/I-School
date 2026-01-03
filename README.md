@@ -27,9 +27,7 @@ i-School is a comprehensive school website designed to showcase the institution'
 
 <div align="center">
 
-<img src="./assets/ischool-demo.gif" width="85%" />
-
-<sub>Homepage → Gallery → Announcements → Contact</sub>
+<img src="./Gif/ischool.gif" width="85%" />
 
 </div>
 
